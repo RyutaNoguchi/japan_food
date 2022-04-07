@@ -15,3 +15,4 @@ use App\Http\Controllers\PrefectureController;
 */
 
 Route::get('/', [PrefectureController::class, 'index'])->name('index');
+Route::post('/create', [PrefectureController::class, 'store'])->name('store');

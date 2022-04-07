@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('name',5);
             $table->string('color');
             $table->string('hoverColor');
+            $table->string('path')->nullable();
+            $table->string('menu')->nullable();
+            $table->timestamps();
         });
     }
 

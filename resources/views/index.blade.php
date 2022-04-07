@@ -42,7 +42,6 @@
 <body>
     <h1 class="m-2">日本47都道府県 食の旅2022</h1>
     
-    <div class="container">
     <div id="jmap">
         <div class="jmap-infobox">
         </div>
@@ -62,5 +61,14 @@
         </div>
     </div>
     </div>
+    
+    //画像のアップロード実験用フォーム
+    <form action='/create/' method='POST' enctype="multipart/form-data">
+        @csrf
+        <input type='file' name='image'>
+        {{ csrf_field() }}
+        <button type='submit'>送信</button>
+    </form>
+    
 </body>
 </html>
