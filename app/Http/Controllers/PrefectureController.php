@@ -25,8 +25,7 @@ class PrefectureController extends Controller
         $path = Storage::disk('s3')->put('/', $image, 'public');
         // アップロードした画像のフルパスを取得
         $prefecture->path = Storage::disk('s3')->url($path);
-        dd($prefecture);
-    
+        //
         $prefecture->save();
         return redirect('/');
     }

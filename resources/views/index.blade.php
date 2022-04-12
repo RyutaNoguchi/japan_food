@@ -41,7 +41,7 @@
 
 <body>
     <h1 class="m-2">日本47都道府県 食の旅2022</h1>
-    
+    <img src="https://chart.googleapis.com/chart?cht=tx&chl=A=\sqrt{B%2BC}">
     <div id="jmap">
         <div class="jmap-infobox">
         </div>
