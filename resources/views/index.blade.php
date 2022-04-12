@@ -107,8 +107,8 @@
         </select>
         </p>
         <p><textarea name='prefecture[menu]' rows="10" cols="60" placeholder="献立を入力してください"></textarea></textarea></textarea></p>
-        <p><input type='file' name='image[]' multiple></p>
-        <button type="submit" class="btn btn-outline-warning m-2 text-right">登録</button>        
+        <p><input type='file' name='image[]' accept="image/jpeg,image/png,image/gif" multiple></p>
+        <button type="submit" class="btn btn-outline-warning m-2 text-right">登録</button>
     </form>
 
     <div class="modal fade" id="prefectureModal" tabindex="-1" role="dialog" aria-labelledby="prefectureModalCenterTitle" aria-hidden="true">

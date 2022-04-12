@@ -19,7 +19,7 @@ class PrefectureController extends Controller
     public function show(Prefecture $prefecture){
         
         $prefectures = DB::table('prefectures')->select('code', 'name', 'color', 'hoverColor', 'menu')->get();
-        $images = $prefecture->find(1)->images;
+        $images = $prefecture->images;
         return view("index", [
             'prefectures' => $prefectures,
             'prefecture' => $prefecture,
