@@ -25,11 +25,9 @@
                 font: 'serif',
                 areas: prefectures,
                 onSelect: function(e, data) {
-                    $('#prefectureModal').find('#prefectureModalTitle')
-                    .html(data.area8.name + " - " + data.area11.name + " - " + data.name + data.full)
-                    .end().find('.modal-body')
-                    .html(JSON.stringify(data, null, 4))
-                    .end().modal('show');
+                    if (prefectures[data.code-1]['color'] == '#FFC107') {
+                        window.location.href =　'/' + data.code;
+                    }
                 },
             });
         });
@@ -45,6 +43,14 @@
         <div class="jmap-infobox">
         </div>
     </div>
+    
+    @if(isset($prefecture))
+        <p>献立</p>
+        <p>{{ $prefecture->menu }}</p>
+        @foreach($images as $image)
+            <img src="{{ $image->path }}">
+        @endforeach
+    @endif
     
     <form action='/store' method='POST' enctype='multipart/form-data'>
         @csrf
@@ -101,7 +107,7 @@
         </select>
         </p>
         <p><textarea name='prefecture[menu]' rows="10" cols="60" placeholder="献立を入力してください"></textarea></textarea></textarea></p>
-        <p><input type='file' name='image'></p>
+        <p><input type='file' name='image[]' multiple></p>
         <button type="submit" class="btn btn-outline-warning m-2 text-right">登録</button>        
     </form>
 

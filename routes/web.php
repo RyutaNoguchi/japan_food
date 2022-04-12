@@ -15,4 +15,5 @@ use App\Http\Controllers\PrefectureController;
 */
 
 Route::get('/', [PrefectureController::class, 'index'])->name('index');
+Route::get('/{prefecture}', [PrefectureController::class, 'show'])->name('show');
 Route::post('/store', [PrefectureController::class, 'store'])->name('store');

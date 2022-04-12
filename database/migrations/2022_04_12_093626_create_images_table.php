@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->id();
-            $table->integer('prefectures_id')->unsigned();
+            $table->bigIncrements('id');
+            $table->integer('prefecture_id')->unsigned();
             $table->string('path')->nullable();
             $table->timestamps();
         });
