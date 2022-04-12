@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('prefectures', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->integer('code');
-            $table->string('name',5);
-            $table->string('color');
-            $table->string('hoverColor');
-            $table->string('menu')->nullable();
+            $table->integer('prefectures_id')->unsigned();
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prefectures');
+        Schema::dropIfExists('images');
     }
 };

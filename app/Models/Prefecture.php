@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Prefecture extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'id',
+        'code',
+        'name',
+        'color',
+        'hoverColor',
+        'menu',
+    ];
+    
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }

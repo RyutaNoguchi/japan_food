@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Storage;
 
 class PrefectureController extends Controller
-{   //色#FFC107
+{
     public function index(Prefecture $prefecture){
         
         $prefectures = DB::table('prefectures')->select('code', 'name', 'color', 'hoverColor')->get();
@@ -17,7 +17,12 @@ class PrefectureController extends Controller
     
     public function store(Request $request)
     {
-        $prefecture = DB::table('prefectures')->where('id',1)->first();
+        $result = $request['prefecture'];
+        $prefecture = DB::table('prefectures')->where('id',$result['id'])->update([
+            'menu' => $result['menu'],
+            'color' => '#FFC107'
+        ]);
+        return redirect('/');
 
         //s3アップロード開始
         $image = $request->file('image');
