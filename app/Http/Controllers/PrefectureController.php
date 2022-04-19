@@ -32,6 +32,8 @@ class PrefectureController extends Controller
     
     public function store(Request $request)
     {
+        $images = $request->file('image');
+        dd($images);
         $result = $request['prefecture'];
         $prefecture = DB::table('prefectures')->where('id',$result['id'])->update([
             'menu' => $result['menu'],
