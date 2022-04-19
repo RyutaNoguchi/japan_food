@@ -41,7 +41,7 @@ class PrefectureController extends Controller
         $images = $request->file('image');
         //foreach($images as $item){
             $image = new Image();
-            $path = Storage::disk('s3')->put('/', $images, 'public');
+            $path = Storage::disk('s3')->putFile('/', $images, 'public');
             $image->path = Storage::disk('s3')->url($path);
             $image->prefecture_id = $result['id'];
             $image->save();
