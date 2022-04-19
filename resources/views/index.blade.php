@@ -25,9 +25,7 @@
                 font: 'serif',
                 areas: prefectures,
                 onSelect: function(e, data) {
-                    if (prefectures[data.code-1]['color'] == '#FFC107') {
-                        console.log("ここはどうだ");
-                        window.location.href =　'/' + data.code;
+                    window.location.href =　'/' + data.code;
                     }
                 },
             });
@@ -45,7 +43,7 @@
         </div>
     </div>
     
-    @if(isset($prefecture))
+    @if($prefecture)
         <p>献立</p>
         <p>{{ $prefecture->menu }}</p>
         @foreach($images as $image)
