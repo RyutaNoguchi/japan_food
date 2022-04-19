@@ -32,8 +32,6 @@ class PrefectureController extends Controller
     
     public function store(Request $request)
     {
-        $images = $request->file('image');
-        dd($images);
         $result = $request['prefecture'];
         $prefecture = DB::table('prefectures')->where('id',$result['id'])->update([
             'menu' => $result['menu'],
@@ -43,7 +41,7 @@ class PrefectureController extends Controller
         $images = $request->file('image');
         //foreach($images as $item){
             $image = new Image();
-            $path = Storage::disk('s3')->putFile('/', $images, 'public');
+            $path = Storage::disk('s3')->putFile('', $images, 'public');
             $image->path = Storage::disk('s3')->url($path);
             $image->prefecture_id = $result['id'];
             $image->save();
