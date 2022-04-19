@@ -18,13 +18,13 @@ class PrefectureController extends Controller
     
     public function show(Prefecture $prefecture){
         
-        if ($prefecture->color == "'#FFC107'"){
-            $prefecture = null;
-            $images = null;
-        } else {
-           $images = $prefecture->images; 
-        }
         $prefectures = DB::table('prefectures')->select('code', 'name', 'color', 'hoverColor', 'menu')->get();
+        if ($prefecture->color == '#FFECB3'){
+            return view("index", [
+                'prefectures' => $prefectures,
+            ]);
+        }
+        $images = $prefecture->images;
         return view("index", [
             'prefectures' => $prefectures,
             'prefecture' => $prefecture,

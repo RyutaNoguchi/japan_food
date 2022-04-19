@@ -43,7 +43,7 @@
         </div>
     </div>
     
-    @if($prefecture!=null)
+    @if(isset($prefecture))
         <p>献立</p>
         <p>{{ $prefecture->menu }}</p>
         @foreach($images as $image)
