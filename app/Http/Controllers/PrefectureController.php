@@ -20,9 +20,7 @@ class PrefectureController extends Controller
         
         $prefectures = DB::table('prefectures')->select('code', 'name', 'color', 'hoverColor', 'menu')->get();
         if ($prefecture->color == '#FFECB3'){
-            return view("index", [
-                'prefectures' => $prefectures,
-            ]);
+            return view("index", ['prefectures' => $prefectures]);
         }
         $images = $prefecture->images;
         return view("index", [

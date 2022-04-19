@@ -1,3 +1,13 @@
+/*!
+ * Jmap v0.0.1
+ * https://github.com/yugokimura
+ *
+ * Copyright (c) 2020 Yugo Kimura
+ * Released under the MIT license
+ *
+ * Date: 2020-04-01T12:23:34.356Z
+ */
+;
 (function($) {
 
     // Identifiers

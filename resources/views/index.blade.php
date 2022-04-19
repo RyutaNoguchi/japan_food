@@ -26,7 +26,6 @@
                 areas: prefectures,
                 onSelect: function(e, data) {
                     window.location.href =　'/' + data.code;
-                    }
                 },
             });
         });
