@@ -25,8 +25,8 @@
                 font: 'serif',
                 areas: prefectures,
                 onSelect: function(e, data) {
-                    console.log("ここは動いてる");
                     if (prefectures[data.code-1]['color'] == '#FFC107') {
+                        console.log("ここはどうだ");
                         window.location.href =　'/' + data.code;
                     }
                 },
