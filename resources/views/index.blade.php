@@ -4,7 +4,6 @@
 <head>
     <title>食の旅2022</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-    <script type="text/javascript" src="{{ url(mix('js/jmap.js')) }}" defer></script>
     <script type = "text/javascript">
         const prefectures = @json($prefectures);
         $(document).ready(function() {
