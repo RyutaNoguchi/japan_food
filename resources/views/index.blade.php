@@ -46,7 +46,7 @@
         <p>献立</p>
         <p>{{ $prefecture->menu }}</p>
         @foreach($images as $image)
-            <img src="{{ $image->path }}">
+            <img src="{{ $image->path }}" style="width:700px; padding:30px;">
         @endforeach
     @endif
     
@@ -54,7 +54,7 @@
         @csrf
         <p>
         <select name="prefecture[id]">
-            <option value="" selected>都道府県</option>
+            <option value="" style="padding:30px;" selected>都道府県</option>
             <option value="1">北海道</option>
             <option value="2">青森県</option>
             <option value="3">岩手県</option>
@@ -104,8 +104,8 @@
             <option value="47">沖縄県</option>
         </select>
         </p>
-        <p><textarea name='prefecture[menu]' rows="10" cols="60" placeholder="献立を入力してください"></textarea></textarea></textarea></p>
-        <p><input type='file' name='image[]' accept="image/jpeg,image/png,image/gif" multiple></p>
+        <p><textarea name='prefecture[menu]' rows="10" cols="60" style="padding:30px;" placeholder="献立を入力してください"></textarea></textarea></textarea></p>
+        <p><input type='file' name='image[]' style="padding:30px;" accept="image/jpeg,image/png,image/gif" multiple></p>
         <button type="submit" class="btn btn-outline-warning m-2 text-right">登録</button>
     </form>
 
