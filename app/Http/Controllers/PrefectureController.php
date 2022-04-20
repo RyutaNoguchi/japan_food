@@ -10,14 +10,14 @@ use Storage;
 
 class PrefectureController extends Controller
 {
-    public function index(){
-        
+    public function index()
+    {
         $prefectures = DB::table('prefectures')->select('code', 'name', 'color', 'hoverColor', 'menu')->get();
         return view("index", ['prefectures' => $prefectures]);
     }
-    
-    public function show(Prefecture $prefecture){
-        
+
+    public function show(Prefecture $prefecture)
+    {
         $prefectures = DB::table('prefectures')->select('code', 'name', 'color', 'hoverColor', 'menu')->get();
         if ($prefecture->color == '#FFECB3'){
             return view("index", ['prefectures' => $prefectures]);
@@ -39,13 +39,13 @@ class PrefectureController extends Controller
         ]);
 
         $images = $request->file('image');
-        //foreach($images as $item){
+        foreach($images as $item){
             $image = new Image();
-            $path = Storage::disk('s3')->putFile('/', $images, 'public');
+            $path = Storage::disk('s3')->putFile('/', $item, 'public');
             $image->path = Storage::disk('s3')->url($path);
             $image->prefecture_id = $result['id'];
             $image->save();
-        //}
+        }
         return redirect('/');
     }
 }
