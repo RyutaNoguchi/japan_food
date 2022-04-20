@@ -39,12 +39,14 @@ class PrefectureController extends Controller
         ]);
 
         $images = $request->file('image');
-        foreach($images as $item){
-            $image = new Image();
-            $path = Storage::disk('s3')->putFile('/', $item, 'public');
-            $image->path = Storage::disk('s3')->url($path);
-            $image->prefecture_id = $result['id'];
-            $image->save();
+        if(isset($image)){
+            foreach($images as $item){
+                $image = new Image();
+                $path = Storage::disk('s3')->putFile('/', $item, 'public');
+                $image->path = Storage::disk('s3')->url($path);
+                $image->prefecture_id = $result['id'];
+                $image->save();
+            }
         }
         return redirect('/');
     }
