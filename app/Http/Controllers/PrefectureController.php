@@ -39,7 +39,7 @@ class PrefectureController extends Controller
         ]);
 
         $images = $request->file('image');
-        if(isset($image)){
+        if(isset($images)){
             foreach($images as $item){
                 $image = new Image();
                 $path = Storage::disk('s3')->putFile('/', $item, 'public');
